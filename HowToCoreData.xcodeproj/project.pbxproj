@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DD4E30F421B42E4B00BFCBFF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4E30F321B42E4B00BFCBFF /* DetailViewController.swift */; };
+		DD70DFE321BDB96900A09D4F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70DFE221BDB96900A09D4F /* DetailTableViewCell.swift */; };
+		DD70DFE521BDB97000A09D4F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70DFE421BDB97000A09D4F /* ListTableViewCell.swift */; };
 		DDF91C9221B36677001D9EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF91C9121B36677001D9EBE /* AppDelegate.swift */; };
 		DDF91C9421B36677001D9EBE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF91C9321B36677001D9EBE /* ListViewController.swift */; };
 		DDF91C9721B36677001D9EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF91C9521B36677001D9EBE /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		DD4E30F321B42E4B00BFCBFF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DD70DFE221BDB96900A09D4F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		DD70DFE421BDB97000A09D4F /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		DDF91C8E21B36677001D9EBE /* HowToCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowToCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF91C9121B36677001D9EBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF91C9321B36677001D9EBE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				DDF91C9321B36677001D9EBE /* ListViewController.swift */,
 				DD4E30F321B42E4B00BFCBFF /* DetailViewController.swift */,
 				DDF91C9521B36677001D9EBE /* Main.storyboard */,
+				DD70DFE221BDB96900A09D4F /* DetailTableViewCell.swift */,
+				DD70DFE421BDB97000A09D4F /* ListTableViewCell.swift */,
 				DDF91C9B21B36678001D9EBE /* Assets.xcassets */,
 				DDF91C9D21B36678001D9EBE /* LaunchScreen.storyboard */,
 				DDF91CA021B36678001D9EBE /* Info.plist */,
@@ -144,7 +150,9 @@
 				DDF91C9421B36677001D9EBE /* ListViewController.swift in Sources */,
 				DDF91C9221B36677001D9EBE /* AppDelegate.swift in Sources */,
 				DDF91C9A21B36677001D9EBE /* HowToCoreData.xcdatamodeld in Sources */,
+				DD70DFE321BDB96900A09D4F /* DetailTableViewCell.swift in Sources */,
 				DD4E30F421B42E4B00BFCBFF /* DetailViewController.swift in Sources */,
+				DD70DFE521BDB97000A09D4F /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

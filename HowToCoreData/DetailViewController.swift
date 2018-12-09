@@ -12,6 +12,7 @@ import CoreData
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var itemNavigation: UINavigationItem!
     
     var moc:NSManagedObjectContext!
     var list:List?
@@ -21,6 +22,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         loadArray()
+        itemNavigation.title = list?.name
     }
     
     func loadArray() {
@@ -77,9 +79,22 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = itemsArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! DetailTableViewCell
+        cell.setupCell(name: itemsArray[indexPath.row].name ?? "")        
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let itemObject = itemsArray[indexPath.row]
+            itemObject.managedObjectContext?.delete(itemObject)
+            do {
+                try self.moc.save()
+                self.loadArray()
+                self.tableView.reloadData()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

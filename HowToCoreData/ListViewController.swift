@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var selectedList:List?
@@ -19,7 +19,6 @@ class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         setupFetchedResultsController()
     }
@@ -28,10 +27,7 @@ class ListViewController: UIViewController, NSFetchedResultsControllerDelegate {
         let listRequest:NSFetchRequest<List> = List.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "created", ascending: false)
         listRequest.sortDescriptors = [sortDescriptor]
-        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: listRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.delegate = self
-        
         do {
             try fetchedResultsController.performFetch()
         } catch{
@@ -86,13 +82,27 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let listObject = fetchedResultsController.object(at: indexPath)
-        let cell = UITableViewCell()
-        cell.textLabel?.text = listObject.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ListTableViewCell
+        cell.setupCell(name: listObject.name ?? "", itemsAmount: listObject.items.description)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedList = fetchedResultsController.object(at: indexPath)
         performSegue(withIdentifier: "ListDetail", sender: navigationController)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let listObject = fetchedResultsController.object(at: indexPath)
+            listObject.managedObjectContext?.delete(listObject)
+            do {
+                try self.moc.save()
+                self.setupFetchedResultsController()
+                self.tableView.reloadData()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

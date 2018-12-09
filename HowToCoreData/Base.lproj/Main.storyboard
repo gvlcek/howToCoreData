@@ -22,13 +22,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="68" id="v6K-v9-H8B">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="55" id="v6K-v9-H8B" customClass="ListTableViewCell" customModule="HowToCoreData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v6K-v9-H8B" id="jLh-Vh-U6v">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Items: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gI-48-CnV">
+                                                    <rect key="frame" x="291" y="17" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Nombre de Lista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9i-hc-Q0B">
+                                                    <rect key="frame" x="15" y="21" width="256" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O9i-hc-Q0B" secondAttribute="bottom" constant="10" id="FKY-iG-nMg"/>
+                                                <constraint firstItem="O9i-hc-Q0B" firstAttribute="top" secondItem="jLh-Vh-U6v" secondAttribute="topMargin" constant="10" id="Hlk-za-Of7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9gI-48-CnV" secondAttribute="bottom" constant="6" id="Y9m-iF-LlP"/>
+                                                <constraint firstItem="9gI-48-CnV" firstAttribute="top" secondItem="jLh-Vh-U6v" secondAttribute="topMargin" constant="6" id="dSp-GU-npe"/>
+                                                <constraint firstItem="9gI-48-CnV" firstAttribute="trailing" secondItem="jLh-Vh-U6v" secondAttribute="trailingMargin" id="tgJ-li-zlP"/>
+                                                <constraint firstItem="O9i-hc-Q0B" firstAttribute="leading" secondItem="jLh-Vh-U6v" secondAttribute="leadingMargin" id="uEB-SF-vfS"/>
+                                                <constraint firstItem="9gI-48-CnV" firstAttribute="leading" secondItem="O9i-hc-Q0B" secondAttribute="trailing" constant="20" id="wRi-ob-wyM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemsAmountLabel" destination="9gI-48-CnV" id="hH9-HR-sDg"/>
+                                            <outlet property="nameLabel" destination="O9i-hc-Q0B" id="eAd-NF-nNo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -74,13 +101,29 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Z6z-3U-Hqy">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" rowHeight="60" id="Z6z-3U-Hqy" customClass="DetailTableViewCell" customModule="HowToCoreData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z6z-3U-Hqy" id="Lfk-mn-Mgk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del item de lista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-0k-pX3">
+                                                    <rect key="frame" x="15" y="19" width="186" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Q7R-0k-pX3" firstAttribute="top" secondItem="Lfk-mn-Mgk" secondAttribute="topMargin" constant="8" id="Bqo-gc-GFS"/>
+                                                <constraint firstItem="Q7R-0k-pX3" firstAttribute="leading" secondItem="Lfk-mn-Mgk" secondAttribute="leadingMargin" id="cVu-O3-0ty"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Q7R-0k-pX3" secondAttribute="bottom" constant="9" id="wCD-WI-oGN"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Q7R-0k-pX3" id="5iq-Si-wmL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -99,13 +142,14 @@
                         <viewLayoutGuide key="safeArea" id="GO3-27-ctr"/>
                     </view>
                     <navigationItem key="navigationItem" id="833-ea-YEQ">
-                        <barButtonItem key="rightBarButtonItem" title="Agregar Item" id="T6Z-qJ-lM4">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="T6Z-qJ-lM4">
                             <connections>
                                 <action selector="addTapped:" destination="9Ho-Vp-roM" id="Gdi-p8-ikR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemNavigation" destination="833-ea-YEQ" id="QDa-7h-VG2"/>
                         <outlet property="tableView" destination="MLC-Td-f5M" id="19U-ig-lDc"/>
                     </connections>
                 </viewController>
